@@ -20,9 +20,7 @@ $(document).ready(function(){
       sum = sum + subject_points[3];
       sum = sum + subject_points[4];*/
       sum = 0;
-      for (i = 0; i < subject_points.length; i++){
-          sum += subject_points[i];
-      };
+      for (i = 0; i < subject_points.length; i++){sum += subject_points[i]};
       // 「合計点：」(id="sum_indicate")に変数「sum」(合計点)を出力させます。
       $("#sum_indicate").text(sum);
       $("#average_indicate").text(sum/(subject_points).length);
@@ -101,7 +99,7 @@ $(document).ready(function(){
     // 「最終ジャッジ」(id="btn-declaration")ボタンを押したら「function judgement()」が出力される処理です。
     $('#btn-declaration').click(function() {
         let achievement = get_achievement();
-        pass_or_failure = get_pass_or_failure();
+        let pass_or_failure = get_pass_or_failure();
         $("#declaration").text(`あなたの成績は${achievement}です。${pass_or_failure}です。`)
         .css("background-color", "LightCyan");
     });
